@@ -74,17 +74,23 @@ console.log('------ variables ----------');
 console.log('------ strings ----------');
 
     //basic string
-
+    //var name = "James Bond";
+    //var testString = "He's in Programming for Web Applications 1";
+    //console.log(name);
+    //console.log("Example 1: " + testString);
 
     //string w/ escape characters " \ "
-
-
+    //var testString2 = "I'll need some \"escape characters\" here!";
+    //console.log(testString2);
+    
     //string w/ escape characters and mixed single/double quotes
-
+    //var testString3 = "Look! Over there. It's a string with a mix of double quotes and \"single quotes\"!";
+    //console.log(testString3);
 
     //this example shows that all the "phase" vars above were overwritten
-
-
+    //var section = 3;
+    //var testString4 = 'He\'s in PAW-' + section;
+    //console.log(testString4);
 
 // numbers (definition, concatenation +, math, numbers & strings)
 console.log('------ numbers ----------');
