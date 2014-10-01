@@ -7,7 +7,7 @@
 	Part 1/3 of series	*/
 
 // self-executing function
-function(){
+(function(){
 
     console.log("FIGHT!!!"); // Outputs to the console
 
@@ -75,7 +75,7 @@ function(){
     /*******  The program gets started below *******/
     fight(); // Executes after all of the above functions and algorithms have been declared to initiate the game
 
-}; // Ends the self-executing function() declared on line 10 (I don't know if those extra parentheses were for anything important but I've removed them because they seemed pointless and I had no idea what they were for)
+})(); // Ends the self-executing function() declared on line 10
 
 // That was a lot of typing. I need more caffeine.
 // Commented with <3 by Alexander Rhett Crammer
