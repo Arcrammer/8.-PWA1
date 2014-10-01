@@ -68,6 +68,9 @@
         } else if (playerTwoHealth<1)// Else() to execute if the second player has health lower than the amount of 1
         {
             result = playerOneName+" WINS!!!" // Reassigns the value of the 'result' variable if the second player has health lower than 1 to declare that the second player has won the fight
+            if(playerOneName.toLowerCase() == "gaga") {
+            	result = playerOneName+" WINS!!!\n\nYYYYYAAAAAAAAAAAASSSSSSSSS GAGA SLAAAAAY MAMA" // Reassigns the 'result' value if the first player is named 'Gaga' by comparing the value to "gaga" after being converted to lower case, that way the first players' name could be any case of the word 'Gaga' and the condition for this if() would still be true and reassign the value
+            	} // Ends the if() declared at line 71
         }; // Ends the if-elseif-elseif's declared on lines 63, 66, and 68
        return result; // Returns the value of this functions' 'result' variable to the 'result' variable declared within the fight() function. This variable is declared for the fight() function to locally use in its' for() loop on line 46
     }; // Ends the 'winnerCheck()' function
