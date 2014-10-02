@@ -32,7 +32,7 @@
 		}; // Ends the if() beginning at line 26
 		
 		search(query); // Calls the search() function (which I've never heard of) on something (I have no idea what, exactly) and passes the trimmed and validated search query from the 'query' variable has been modified between lines 15 and 32 by calling the 'validqte' variable holding the anonymous function to begin it (the validation)
-	}; // Ends something which is not the function at line 6
+	}; // Ends the anonymous function under the variable 'validqte' beginning at line 15
 	
 	// Finds search matches
 	var search = function(query)
