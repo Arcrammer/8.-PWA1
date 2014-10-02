@@ -3,19 +3,19 @@
 	Debug #1	*/
 
 // Create privatized scope using a self-executing function
-(function(){
+(function(){ // Beginning a self-executing function
 	
 	// Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),
-		searchInput = document.forms[0].search,
-		currentSearch = ''
+	var resultsDIV = document.getElementById("results"), // Captures the HTML div with the id attribute of 'results' which will hold the results of the search then stores the reference to the 'resultsDIV' variable
+		searchInput = document.forms[0].search, // Fetches the first (and only) <form> of 'index.html' then searches for something (Honestly unsure)
+		currentSearch = '' // Assigns an empty string value to the variable 'currentSearch'
 	;
 	
 	// Validates search query
-	var validqte == function(query){
+	var validqte == function(query){ // Assigning an anonymous function to a local variable named 'validqte'
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){
+		while(query.charAt(0) = " "){ // Begins a while() loop which will be executed as long as the first character of the provided search query is a space, in order to provide the most desirable results for the user regardless of extra spaces
 			query = query.substring(1, query.length);
 		};
 		while(query.charAt(query.length-1) === ""){
