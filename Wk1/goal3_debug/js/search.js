@@ -82,33 +82,33 @@
 			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>' // Again, adds more text to the string of the variable 'html' declared on line 80
 		; // Ends the statement declaring the value of the variable 'html'
 		resultsDIV.innerHTML = html; // Sets the 'innerHTML' of the 'resultsDIV' variable (declared on line 9) to the value of the variable 'html' declared at line 80
-	};
+	}; // Ends the anonymous function assigned to the variable 'noMatch' which can be found at line 79
 	
 	// Put matches into page as paragraphs with anchors
-	var showMatches = function(results){
+	var showMatches = function(results){ // Begins an anonymous function and stores it in the local variable 'showMatches'
 		
 		// THE NEXT 4 LINES ARE CORRECT.
-		var html = '<p>Results</p>', 
-			title, 
-			url
-		;
+		var html = '<p>Results</p>', // Reassigns the value of the 'html' variable declared on line 80
+			title, // Declares a local variable named 'title' with no value
+			url // Declares another local variable named 'url' with no value
+		; // Ends the statement beginning on line 91 declaring the variables
 		
 		// loop through all the results search() function
-		for(var i=0, j=results.length; i<j; i++){
+		for(var i=0, j=results.length; i<j; i++){ // Begins a for() loop which will execute once for each result returned
 		
 			// title of video ends with pipe
 			// pull the title's string using index numbers
-			titleEnd = results[i].indexOf('|');
-			title = results[i].subString(0, titleEnd);
+			titleEnd = results[i].indexOf('|'); // Assigns the location of the pipe character within each result then stores the value as an integer to the variable 'titleEnd'
+			title = results[i].subString(0, titleEnd); // Returns the titles of each video from the first character to the pipe (definded in 'titleEnd') to the variable 'title'
 			
 			// pull the video url after the title
-			url = results[i].substring(results[i].indexOf('|')+1, results[i].length);
+			url = results[i].substring(results[i].indexOf('|')+1, results[i].length); // Finds the name of each video file then assigns the value to the variable 'url'
 			
 			// make the video link - THE NEXT LINE IS CORRECT.
-			html += '<p><a href=' + url + '>' + title + '</a></p>';
-		};
-		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
-	};
+			html += '<p><a href=' + url + '>' + title + '</a></p>'; // Reassigns the value of the 'html' variable to a string holding a paragraph element holding an anchor to the video
+		}; // Ends the for() loop beginning at line 97
+		resultsDIV.innerHTML = html; // Pushes the value of the variable 'html' to the <div> with the id of 'resultsDIV'
+	}; // Ends the anonymous function declared under the variable 'showMatches' defined on line 88
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
