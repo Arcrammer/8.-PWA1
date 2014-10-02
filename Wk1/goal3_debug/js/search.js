@@ -35,16 +35,16 @@
 	}; // Ends the anonymous function under the variable 'validqte' beginning at line 15
 	
 	// Finds search matches
-	var search = function(query)
+	var search = function(query) /* DEFINITE BUG FIX: NEED AN OPENING CURLY BRACKET FOR THIS FUNCTION */ // Begins an anonymous function under the local variable named 'search'
 		
 		// split the user's search query string into an array
-		var queryArray = query.join(" ");
+		var queryArray = query.join(" "); // Joins the query elements from an array to a string then assigns the result to the variable 'queryArray' (Could this be a bug or a misused method? Am I missing something here?)
 		
 		// array to store matched results from database.js
-		var results = [];
+		var results = []; // Creates an empty array then assigns it to the variable 'results'
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){
+		for(var i=0, j=db.length; i<j; i++){ 
 		
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
@@ -61,9 +61,9 @@
 				var compare = dbitem.indexOf(qitem);
 				if(compare !== -1){
 					results.push(db[i]);
-				};
-			;
-		;
+				}; // Ends the for() loop beginning at line 56
+			; /* DEFINITE BUG FIX: ADD A CLOSING CURLY BRACKET */ // Ends the for() loop beginning at line 47
+		; /* DEFINITE BUG FIX: ADD A CLOSING CURLY BRACKET */ // Ends the anonymous function declared under the variable 'search' on line 38
 		
 		results.sort();
 		
@@ -76,12 +76,12 @@
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
-	var noMatch = function(){
-		var html = ''+
-			'<p>No Results found.</p>'+
-			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>'
-		;
-		resultsDIV.innerHTML = html;
+	var noMatch = function(){ // Begins an anonymous function which is assigned to the variable 'noMatch'
+		var html = ''+ // Declares a local variable named 'html' then assigns it the value of an empty string and concatenation to include what's on line 81 below
+			'<p>No Results found.</p>'+ // Adds more text to the string of the variable 'html' declared on line 80
+			'<p style="font-size:10px;">Try searching for "JavaScript".  Just an idea.</p>' // Again, adds more text to the string of the variable 'html' declared on line 80
+		; // Ends the statement declaring the value of the variable 'html'
+		resultsDIV.innerHTML = html; // Sets the 'innerHTML' of the 'resultsDIV' variable (declared on line 9) to the value of the variable 'html' declared at line 80
 	};
 	
 	// Put matches into page as paragraphs with anchors
