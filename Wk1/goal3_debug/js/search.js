@@ -112,13 +112,13 @@
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
-		var query = searchInput.value;
-		validqte(query);
+	document.forms[0].onsubmit = function(){ // Begins a function to execute each time the first (and only) form element of 'index.html' is submitted using the 'submit' button with id 'ssubmit'
+		var query = searchInput.value; // Assigns the value of the 'searchInput' variable declared on line 10 to a local variable named 'query'
+		validqte(query); // Calls the 'validqte()' function defined on line 15 passing the value query most recently redefined on line 116
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
-		return false;
-	;
+		return false; // Returns a value of 'false' after the function beginning on line 115 is executed
+	; // Ends the function beginning on line 115
 
-})();
+})(); // Ends the self-executing function defined on line 6
