@@ -16,14 +16,14 @@
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){ // Begins a while() loop which will be executed as long as the first character of the provided search query is a space, in order to provide the most desirable results for the user regardless of extra spaces
-			query = query.substring(1, query.length);
-		};
-		while(query.charAt(query.length-1) === ""){
-			query = query.substring(0, query.length-1);
+			query = query.substring(1, query.length); // Reassigns the value of the input search query to the 'query' variable then passes it through the loop again for further trimming
+		}; // Ends the while() loop beginning at line 18
+		while(query.charAt(query.length-1) === ""){ // Begins another while() loop which will be executed as long as the last character of the provided search query is an empty string /* POSSIBLE BUG FIX: THIS CONDITION SHOULD EVALUATE AGAINST A SPACE AS IN " " (Maybe I just don't understand how this is working but it seems like that should be the case) */
+			query = query.substring(0, query.length-1); // Reassigns the value of the variable 'query' to a new string with one character removed then passes through the loop again
 		;
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){
+		if(query.length < 3){ // 
 			alert("Your search query is too small, try again.);
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
