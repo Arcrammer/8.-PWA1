@@ -20,19 +20,19 @@
 		}; // Ends the while() loop beginning at line 18
 		while(query.charAt(query.length-1) === ""){ // Begins another while() loop which will be executed as long as the last character of the provided search query is an empty string /* POSSIBLE BUG FIX: THIS CONDITION SHOULD EVALUATE AGAINST A SPACE AS IN " " (Maybe I just don't understand how this is working but it seems like that should be the case) */
 			query = query.substring(0, query.length-1); // Reassigns the value of the variable 'query' to a new string with one character removed then passes through the loop again
-		;
+		; /* DEFINITE BUG FIX: CURLY BRACKET NEEDED TO CLOSE THIS WHILE LOOP'S BLOCK */ // Ends the while() loop beginning at line 21
 		
 		// Check search length, must have 3 characters
-		if(query.length < 3){ // 
-			alert("Your search query is too small, try again.);
+		if(query.length < 3){ // Begins an if() to check that the provided search query is greater than 2 characters in length
+			alert("Your search query is too small, try again.); // Alert()'s the user if the provided string is longer than 3 characters
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
-			searchInput.focus();
-			return;
-		};
+			searchInput.focus(); // Moves focus (the text of the search box will be highlighted prompting the user to try another query) to the 'searchInput' variable declared on line 10
+			return; // Empty return but I have no idea what it's for. If() statements don't return things, do they? =|
+		}; // Ends the if() beginning at line 26
 		
-		search(query);
-	};
+		search(query); // Calls the search() function (which I've never heard of) on something (I have no idea what, exactly) and passes the trimmed and validated search query from the 'query' variable has been modified between lines 15 and 32 by calling the 'validqte' variable holding the anonymous function to begin it (the validation)
+	}; // Ends something which is not the function at line 6
 	
 	// Finds search matches
 	var search = function(query)
