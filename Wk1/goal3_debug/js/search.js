@@ -44,36 +44,36 @@
 		var results = []; // Creates an empty array then assigns it to the variable 'results'
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){ 
+		for(var i=0, j=db.length; i<j; i++){ // For() for each database item
 		
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+			var dbTitleEnd = db[i].indexOf('|'); // Finds the end of the video titles then assigns the array index of the character to the variable 'dbTitleEnd'
+			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd); // Converts the video title to lower case then cuts it from the beginning character to the end and assigns the value returned to the variable 'dbitem'
 			
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
-				var qitem = queryArray[ii].tolowercase();
+			for(var ii=0, jj=queryArray.length; ii<jj; ii++){ // Starts a for loop which goes through each character of the query
+				var qitem = queryArray[ii].tolowercase(); // Converts the query to lower case then assigns the returned value to the variable 'qitem'
 				
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem);
-				if(compare !== -1){
-					results.push(db[i]);
+				var compare = dbitem.indexOf(qitem); // Looks through the video title for any strings matching the query then assigns the returned array index number to the variable 'compare'
+				if(compare !== -1){ // If() to execute if the result of 'compare' (defined above on line 61) was found
+					results.push(db[i]); // Pushes the elements of the array from the first index of the 'db' variable together into one string
 				}; // Ends the for() loop beginning at line 56
 			; /* DEFINITE BUG FIX: ADD A CLOSING CURLY BRACKET */ // Ends the for() loop beginning at line 47
 		; /* DEFINITE BUG FIX: ADD A CLOSING CURLY BRACKET */ // Ends the anonymous function declared under the variable 'search' on line 38
 		
-		results.sort();
+		results.sort(); // Arranges items of the array defined in the 'results' variable by alphabetic order
 		
 		// Check that matches were found, and run output functions
-		if(results.length = 0){
-			noMatch();
-		}else{
-			showMatches(results);
-		};
-	};
+		if(results.length = 0){ // If() to execute if there are objects in the 'results' variable
+			noMatch(); // Method to run if there are no results (declared in this document)
+		}else{ // Else to run otherwise
+			showMatches(results); // Method to run if there are results (declared in this document)
+		}; // End of the for() on line 47
+	}; // End of the function under the 'search' variable defined on line 38
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){ // Begins an anonymous function which is assigned to the variable 'noMatch'
