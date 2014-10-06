@@ -313,7 +313,20 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 */
 
 console.log('------ MORE Operators - typeof() ----------');
-
+	console.log(typeof 5); // Integer
+	console.log(typeof "Hello"); // String
+	var string = "Hello";
+	console.log(typeof string); // String in a variable
+	console.log(typeof false); // Boolean
+	console.log(typeof function(){}); // Function
+	console.log(typeof object); // Undefined object
+	console.log(typeof []); // Array (Object)
+	
+	if(typeof string === 'undefined') {
+		console.log("The variable is undefined");
+	} else if(typeof string === 'string') {
+		console.log("The variable is \'" + string + "\'.");
+	}
 
 /*
 	===============================================
@@ -349,7 +362,18 @@ console.log('------ MORE Conditionals - Switch ----------');
 			if no age then console.log "No answer"
 ********************************************/
 
+var age = 18;
 
+switch(age) {
+	case 13:
+		console.log("Child");
+		break;
+	case 18:
+		console.log("Adult");
+		break;
+	default:
+		console.log("No answer");
+	}
 
 /*
 	===============================================
@@ -364,6 +388,14 @@ console.log('------ MORE Conditionals - Switch ----------');
 
 console.log('------ MORE Functions ----------');
 
+	var bondCars = function() {return ["Ferrari","Lamborghini","Volkswagen Beetle"]};
+	var cars = bondCars();
+	
+	console.log("James Bond's cars: " + cars);
+
+	(function(){
+		return null;
+	})();
 
 	/* 
 		Self Executing Functions
@@ -389,7 +421,7 @@ console.log('------ MORE Functions ----------');
 	
 	Normal Operations:
 		1. initialize a counter;
-		2. loop/repeat a block of code until condition is met;
+		2. loop/repeat a block of code until condition is met;2
 			the condition that a loop checks for is usually against the counter variable
 		3. the most common use of loops is to cycle through all the 
 			values of an array or other forms of data set (such as objects)
