@@ -498,7 +498,17 @@ console.log('------ MORE Functions ----------');
 */
 console.log('------ While / Loop ----------');
 
-	
+var glasses = 10;
+while(glasses > 1) {
+	console.log("There are " + glasses + " glasses.");
+	glasses--;
+}
+if(glasses == 1) {
+	console.log("There is " + glasses + " glass.");
+	glasses--;
+	console.log("There are " + glasses + " glasses.");
+}
+
 /*
 	===============================================
 	For Loop, prebuilt logic structure
@@ -524,6 +534,14 @@ console.log('------ While / Loop ----------');
 
 console.log('------For Loop ----------');
 
+	for(var glasses = 10; glasses > 1; glasses--) {
+		console.log("There are " + glasses + " glasses.");
+	}
+	if(glasses == 1) {
+		console.log("There is " + glasses + " glass.");
+		glasses--;
+		console.log("There are " + glasses + " glasses.");
+	}
 
 	/* 
 		array.Length
@@ -537,6 +555,8 @@ console.log('------For Loop ----------');
 			- the  .length property returns the count, which would be 5	
 	*/	
 
+	var leMieNumeri = [1,2,3,4,5];
+	console.log("Length: " + leMieNumeri.length);
 
 	/* 
 		using the for() loop with .length
@@ -566,7 +586,11 @@ console.log('------For Loop ----------');
 			break point, and perform no more iterations
 	*/
 
-
+	for(var i=0, var j=leMieNumeri.length; i < j;i++) {
+		console.log("Testing out the break and it broke");
+		break;
+	}
+	console.log("Length of the for() loop: " + leMieNumeri[i]);	
 
 	/*
 		CONTINUE...
