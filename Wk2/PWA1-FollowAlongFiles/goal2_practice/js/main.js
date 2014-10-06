@@ -1,7 +1,7 @@
 /*
-     Name:
-     Date:
-     Class & Section:  PWA1-####
+     Name: Alexander Rhett Crammer
+     Date: Monday, 6 October, 2014
+     Class & Section:  PWA1-1
      Comments: "Goal 2: JavaScript Practice"
  */
 
@@ -252,36 +252,72 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 //Returns the first (least) index of an element within the array equal
 //to the specified value, or -1 if none is found.
 
-
 // join()
 // Joins all elements of an array into a string.
 
+console.log(".indexOf() and .join()");
+console.log(arr2.indexOf('c')); // Returns the position of the passed array item as an integer
+console.log(arr2.join(', ')); // Join() merges each item of an array to a single string. The argument given is used between each item.
 
 // pop()
 // Removes the last element from an array and returns that element
+
+console.log(".pop()");
+var element = arr1.pop(); // Pop removes the last element of the array and returns its
+console.log(element);
+console.log(arr1);
+
 // shift() removes the first element from an array.
 
+console.log(".shift()");
+var element1 = arr1.shift(); // Shift() will do the opposite of pop(), by removing the first item and returning it
+console.log(element1);
+console.log(arr1);
 
 // push()
-// Adds one or more elements to the end of an array and returns the new
-//   length of the array
+// Adds one or more elements to the end of an array and returns the new length of the array
+
+console.log(".push(8)");
+var element2 = arr1.push(8); // Push() will add items to the end of the array
+console.log(element2);
+console.log(arr1);
+
 // unshift() - Adds one or more elements to the front of an array.
 
+console.log(".unshift(0)");
+var element3 = arr1.unshift(0); // Unshift() will add items to the beginning of an array
+console.log(element3);
+console.log(arr1);
 
 // reverse()
 // Reverses the order of the elements of an array
 
+console.log(".reverse()");
+var element4 = arr1.reverse(); // Reverse() will reverse the array from the end to beginning
+console.log(element4);
+console.log(arr1);
+// Re-reverse the array to avoid confusion
+arr1.reverse();
 
 // splice()
 // Adds and/or removes elements from an array.
 
+console.log(".splice()");
+var element5 = arr1.splice(4,2); // Reverse() will reverse the array from the end to beginning
+console.log(element5);
+console.log(arr1);
 
 // forEach()
 // Calls a function for each element in the array.
+console.log(".forEach()");
+console.log(arr1);
+arr1.forEach(function(item, index, array) /* What is passing these parametres? */ {
+	console.log("Item: " + item);
+	console.log("Index: " + index);
+	console.log("Array: " + array);
+});
 
-
-
-
+console.log("BEGIN STUDENT ACTIVITY 5");
 /*******************************************
  STUDENT ACTIVITY 5:
 
@@ -303,6 +339,23 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
     var secondHalfYr = ["Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
     var combined;
 
+// Steps 1 and 2
+combined = firstQtr.concat(secondQtr);
+console.log("Combined: " + combined);
+
+// Steps 3 and 4
+combined = firstQtr.concat(secondQtr, secondHalfYr);
+console.log("\nCombined: " + combined);
+
+// Step 5
+console.log(combined.join());
+
+// Step 6
+console.log("The last item: " + combined.pop());
+console.log("The array: " + combined);
+
+// Step 7
+console.log(secondHalfYr.splice(2,2));
 
 /*
 	===============================================
@@ -391,7 +444,7 @@ console.log('------ MORE Functions ----------');
 	var bondCars = function() {return ["Ferrari","Lamborghini","Volkswagen Beetle"]};
 	var cars = bondCars();
 	
-	console.log("James Bond's cars: " + cars);
+	console.log("James Bond's cars: " + cars.join(', '));
 
 	(function(){
 		return null;
@@ -455,7 +508,8 @@ console.log('------ While / Loop ----------');
 	FOR LOOP: for()
 		- a for loop is an increment-based loop, where the increment is 
 			part of the condition
-		- there are 3 statements inside the condition of a for loop: 
+		- there are 3 statements inside the condition of a for loop:
+
 			a.  first a counter variable is initialized
 			b.  second the “condition check”
 			c.  and third, increment the variable and perform the code 
