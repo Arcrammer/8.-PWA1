@@ -586,7 +586,7 @@ console.log('------For Loop ----------');
 			break point, and perform no more iterations
 	*/
 
-	for(var i=0, var j=leMieNumeri.length; i < j;i++) {
+	for(var i=0, j=leMieNumeri.length; i < j;i++) {
 		console.log("Testing out the break and it broke");
 		break;
 	}
