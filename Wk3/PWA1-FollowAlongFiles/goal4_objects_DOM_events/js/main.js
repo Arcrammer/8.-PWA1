@@ -60,8 +60,7 @@ person.birthDate = {
 };
 console.log(person);
 console.log(person.birthDate.birthday.month); // I was NOT expecting that to work! This was my attempt to pull the value
-console.log(person.birthDate['birthday']['month']); // Another way
-// I guess that means you can do this too...
+console.log(person.birthDate['birthday']['month']); // Another way// I guess that means you can do this too...
 console.log(person.birthDate.birthday['month']); // You can
 
 //---------------------------------------------
@@ -70,6 +69,21 @@ console.log(person.birthDate.birthday['month']); // You can
 
 console.log('------Object within an object, Arrays, Function ----------');
 
+var thatGuy = { // Defining some properties
+	name: "Alexander Rhett Crammer",
+	course: "Programming for Web Applications 1",
+	address:{
+		street: "3300 University Boulevard",
+		city: "Winter Park",
+		corner:['University','Semoran']
+	},
+	showMyAddress: function() { // Declaring my first real JavaScript object method :)
+		var address = this.address.street + ', ' + this.address.city;
+		return address;
+	}
+};
+console.log(thatGuy.showMyAddress()); // My attempt at logging the 'showMyAddress()' method of the 'thatGuy' object
+console.log(thatGuy['address']['street'] + ', ' + thatGuy['address']['city']); // Outputs the address without calling 'showMyAddress()'
 
 
 //properties & methods
@@ -83,9 +97,13 @@ console.log('------Object within an object, Arrays, Function ----------');
 console.log('------Objects - properties & methods ----------');
 
 //Method 1 "Basic"
-
-
-
+var fsStudent = {}; // Declaring the 'fsStudent' object
+fsStudent.age = 18; // Declaring a property known as 'age' for the 'fsStudent' object declared on line 100
+fsStudent.career = 'Web Development'; // Declaring a property known as 'career' for the 'fsStudent' object declared on line 100
+fsStudent.sayHello = function() {
+	var name = prompt("What's your name?");
+	console.log("Hello, " + name + ". You look fantastic today!");
+};
 
 // above, we first initialize the object, then we created 2 properties 
 //   for the object, and a method called sayHello - notice that the method is 
@@ -94,8 +112,11 @@ console.log('------Objects - properties & methods ----------');
 // we can also access the methods and properties of an object using  [ ] , 
 // 	by using their name as a string - all of the below are valid:
 
+/*	fsStudent.sayHello();	*/
+/*	fsStudent["sayHello"]();	*/
 
-
+console.log(fsStudent.age);
+console.log(fsStudent["age"]);
 
 /* --------------
 Method 2 "OBJECT Literal"
@@ -106,8 +127,17 @@ Method 2 "OBJECT Literal"
 	- below is the same object as in Method 1
 */
 
+fsStudent = {
+	age: 18,
+	career: "Web Development",
+	sayHello: function() {
+		var name = prompt("What's your name?");
+		console.log("Hello, " + name + ". You look fantastic today!");
+	}
+}
 
-
+console.log(fsStudent.age);
+consol.log(fsStudent['age']);
 
 //---------------------------------------------
 
