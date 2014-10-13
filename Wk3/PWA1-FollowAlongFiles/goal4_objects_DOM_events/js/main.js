@@ -30,9 +30,7 @@ console.log('------Objects ----------');
 
 //{KEY : Value} pairings,
 
-person = {"firstName":"Alexander","age":"18","secretAgent":"true"};
 
-person = {firstName:"Alexander",age:"18",secretAgent:"true"};
 
 /* accessing object properties
      - below are 3 ways you can access the property information in an object
@@ -43,25 +41,14 @@ person = {firstName:"Alexander",age:"18",secretAgent:"true"};
      - also keep in mind that since the keys can be strings, you could access the keys using string variables
  */
 
-var age = "age";
-console.log(person.firstName,person[age],person["secretAgent"]);
 
 // setter
-person.age++;
-person.anotherKey = 'anotherValue'; // Creating another person property
-console.log(person.age + " " + person.anotherKey);
-person.name = 'Alexander Rhett Crammer';
-console.log(person.name);
+
+
 
 //nested objects
-person.birthDate = {
-	birthday:{month:12,year:1995},
-	name:"Alexander"
-};
-console.log(person);
-console.log(person.birthDate.birthday.month); // I was NOT expecting that to work! This was my attempt to pull the value
-console.log(person.birthDate['birthday']['month']); // Another way// I guess that means you can do this too...
-console.log(person.birthDate.birthday['month']); // You can
+
+
 
 //---------------------------------------------
 
@@ -69,21 +56,6 @@ console.log(person.birthDate.birthday['month']); // You can
 
 console.log('------Object within an object, Arrays, Function ----------');
 
-var thatGuy = { // Defining some properties
-	name: "Alexander Rhett Crammer",
-	course: "Programming for Web Applications 1",
-	address:{
-		street: "3300 University Boulevard",
-		city: "Winter Park",
-		corner:['University','Semoran']
-	},
-	showMyAddress: function() { // Declaring my first real JavaScript object method :)
-		var address = this.address.street + ', ' + this.address.city;
-		return address;
-	}
-};
-console.log(thatGuy.showMyAddress()); // My attempt at logging the 'showMyAddress()' method of the 'thatGuy' object
-console.log(thatGuy['address']['street'] + ', ' + thatGuy['address']['city']); // Outputs the address without calling 'showMyAddress()'
 
 
 //properties & methods
@@ -97,13 +69,9 @@ console.log(thatGuy['address']['street'] + ', ' + thatGuy['address']['city']); /
 console.log('------Objects - properties & methods ----------');
 
 //Method 1 "Basic"
-var fsStudent = {}; // Declaring the 'fsStudent' object
-fsStudent.age = 18; // Declaring a property known as 'age' for the 'fsStudent' object declared on line 100
-fsStudent.career = 'Web Development'; // Declaring a property known as 'career' for the 'fsStudent' object declared on line 100
-fsStudent.sayHello = function() {
-	var name = prompt("What's your name?");
-	console.log("Hello, " + name + ". You look fantastic today!");
-};
+
+
+
 
 // above, we first initialize the object, then we created 2 properties 
 //   for the object, and a method called sayHello - notice that the method is 
@@ -112,11 +80,8 @@ fsStudent.sayHello = function() {
 // we can also access the methods and properties of an object using  [ ] , 
 // 	by using their name as a string - all of the below are valid:
 
-/*	fsStudent.sayHello();	*/
-/*	fsStudent["sayHello"]();	*/
 
-console.log(fsStudent.age);
-console.log(fsStudent["age"]);
+
 
 /* --------------
 Method 2 "OBJECT Literal"
@@ -127,17 +92,8 @@ Method 2 "OBJECT Literal"
 	- below is the same object as in Method 1
 */
 
-fsStudent = {
-	age: 18,
-	career: "Web Development",
-	sayHello: function() {
-		var name = prompt("What's your name?");
-		console.log("Hello, " + name + ". You look fantastic today!");
-	}
-}
 
-console.log(fsStudent.age);
-console.log(fsStudent['age']);
+
 
 //---------------------------------------------
 
@@ -164,44 +120,6 @@ STUDENT ACTIVITY 1:
              d. one student's GPA using dot syntax and index syntax
  ----------------------------------------------------------------------------- */
 
-var alexander = {
-		name:"Alexander Rhett Crammer",
-		GPA:3.5, // :(
-		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
-} // First student object
-
-var miranda = {
-		name:"Miranda Sings",
-		GPA:4.0,
-		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
-} // Second student object
-
-var stacy = {
-		name:"Stacy Says",
-		GPA:4.0,
-		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
-} // Third student object
-
-var university = {
-	schoolName:"Full Sail University",
-	address: {
-		street:"3300 University Boulevard",
-		city:"Winter Park",
-		state:"Florida",
-		zip:"32792",
-	},
-	studentCount:16000,
-	students: [alexander,miranda,stacy]
-}
-
-console.log(university.schoolName);
-console.log(university['schoolName']);
-var newCnt = university.studentCount;
-console.log(newCnt);
-console.log(university['address']['street'] + ", " + university['address']['city'] + " " + university['address']['zip']);
-console.log(university.students[0].GPA);
-console.log(university.students[2]['GPA']);
-
 console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
 
 // this is integrating multiple data types - object with an array of objects
@@ -220,16 +138,8 @@ console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
     2.  console.log the average grade by calling the gradeAvg method.
 ----------------------------------------------------------------------------- */
 
-var gradeAvg = function(obj) {
-	var count = 0;
-	var total = 0;
-	for(var i=0,j=obj.students.length;j > i;i++) {
-		count++;
-		total += obj.students[i].GPA;
-	}
-	return total / count;
-};
-console.log("Average GPA among students: " + gradeAvg(university));
+
+
 
 /* ===============================================================
 	The for-in object loop
@@ -241,16 +151,6 @@ console.log("Average GPA among students: " + gradeAvg(university));
 */
     console.log("---------- Object - For In Loop ----------------");
 
-var students = {
-	name:"Alexander Rhett Crammer",
-	gender:"Male",
-	career:"Web Developer"
-};
-
-for(var key in students) { // For each variable of the 'students' object
-	console.log("Key: " + key);
-	console.log("Value: " + students[key]);
-};
 
 
 /*
@@ -286,12 +186,7 @@ for(var key in students) { // For each variable of the 'students' object
 */
     console.log('------ Objects - Converting Datatypes ----------');
 
-var myNum = 1;
-var myString = String(myNum);
-var myBool = Boolean(myString);
 
-console.log("'myString' is of the data type: " + typeof myString);
-console.log("'myBool' is of the data type: " + typeof myBool);
 
 /*
 	- because these values act as objects, the data types also have methods and 
@@ -301,40 +196,19 @@ console.log("'myBool' is of the data type: " + typeof myBool);
 */
 
 // #1 - shows string length
-var myStr = "OMG";
-console.log(myStr.length);
+
 
 // #2 - shows array length
-var myArr = [6,10];
-console.log(myArr.length);
+	
 
 // #3 - shows and array of objects, inside of an object length
-var university = {
-	schoolName:"Full Sail University",
-	address: {
-		street:"3300 University Boulevard",
-		city:"Winter Park",
-		state:"Florida",
-		zip:"32792",
-	},
-	studentCount:16000,
-	students: [alexander,miranda,stacy]
-}
-
-console.log("There are " + university.students.length + " students.");
+	
 
 console.log('------ MORE Object examples - Objects/Functions ----------');
 
 // showing a function call and creating a method
 
-function fn(name,course) {
-	return {sayHi: function() {
-			console.log("My name is " + name + " and I am attending " + course + ".")
-		}
-	}
-};
 
-fn("Alexander Rhett Crammer","Programming for Web Applications 1").sayHi();
 
 /*
 	==================================================================
