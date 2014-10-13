@@ -137,7 +137,7 @@ fsStudent = {
 }
 
 console.log(fsStudent.age);
-consol.log(fsStudent['age']);
+console.log(fsStudent['age']);
 
 //---------------------------------------------
 
@@ -164,6 +164,44 @@ STUDENT ACTIVITY 1:
              d. one student's GPA using dot syntax and index syntax
  ----------------------------------------------------------------------------- */
 
+var alexander = {
+		name:"Alexander Rhett Crammer",
+		GPA:3.5, // :(
+		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
+} // First student object
+
+var miranda = {
+		name:"Miranda Sings",
+		GPA:4.0,
+		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
+} // Second student object
+
+var stacy = {
+		name:"Stacy Says",
+		GPA:4.0,
+		classes:['Digital Literacy','Psychology of Play','Overview of the Media Design and Technology Industries','English Composition','College Mathematics','Web Programming Fundamentals','Mobile Media Design 1','Programming for Web Applications 1']
+} // Third student object
+
+var university = {
+	schoolName:"Full Sail University",
+	address: {
+		street:"3300 University Boulevard",
+		city:"Winter Park",
+		state:"Florida",
+		zip:"32792",
+	},
+	studentCount:16000,
+	students: [alexander,miranda,stacy]
+}
+
+console.log(university.schoolName);
+console.log(university['schoolName']);
+var newCnt = university.studentCount;
+console.log(newCnt);
+console.log(university['address']['street'] + ", " + university['address']['city'] + " " + university['address']['zip']);
+console.log(university.students[0].GPA);
+console.log(university.students[2]['GPA']);
+
 console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
 
 // this is integrating multiple data types - object with an array of objects
@@ -182,8 +220,16 @@ console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
     2.  console.log the average grade by calling the gradeAvg method.
 ----------------------------------------------------------------------------- */
 
-
-
+var gradeAvg = function(obj) {
+	var count = 0;
+	var total = 0;
+	for(var i=0,j=obj.students.length;j > i;i++) {
+		count++;
+		total += obj.students[i].GPA;
+	}
+	return total / count;
+};
+console.log("Average GPA among students: " + gradeAvg(university));
 
 /* ===============================================================
 	The for-in object loop
