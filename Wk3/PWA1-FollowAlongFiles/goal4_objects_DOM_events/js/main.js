@@ -241,6 +241,16 @@ console.log("Average GPA among students: " + gradeAvg(university));
 */
     console.log("---------- Object - For In Loop ----------------");
 
+var students = {
+	name:"Alexander Rhett Crammer",
+	gender:"Male",
+	career:"Web Developer"
+};
+
+for(var key in students) { // For each variable of the 'students' object
+	console.log("Key: " + key);
+	console.log("Value: " + students[key]);
+};
 
 
 /*
@@ -276,7 +286,12 @@ console.log("Average GPA among students: " + gradeAvg(university));
 */
     console.log('------ Objects - Converting Datatypes ----------');
 
+var myNum = 1;
+var myString = String(myNum);
+var myBool = Boolean(myString);
 
+console.log("'myString' is of the data type: " + typeof myString);
+console.log("'myBool' is of the data type: " + typeof myBool);
 
 /*
 	- because these values act as objects, the data types also have methods and 
@@ -286,19 +301,40 @@ console.log("Average GPA among students: " + gradeAvg(university));
 */
 
 // #1 - shows string length
-
+var myStr = "OMG";
+console.log(myStr.length);
 
 // #2 - shows array length
-	
+var myArr = [6,10];
+console.log(myArr.length);
 
 // #3 - shows and array of objects, inside of an object length
-	
+var university = {
+	schoolName:"Full Sail University",
+	address: {
+		street:"3300 University Boulevard",
+		city:"Winter Park",
+		state:"Florida",
+		zip:"32792",
+	},
+	studentCount:16000,
+	students: [alexander,miranda,stacy]
+}
+
+console.log("There are " + university.students.length + " students.");
 
 console.log('------ MORE Object examples - Objects/Functions ----------');
 
 // showing a function call and creating a method
 
+function fn(name,course) {
+	return {sayHi: function() {
+			console.log("My name is " + name + " and I am attending " + course + ".")
+		}
+	}
+};
 
+fn("Alexander Rhett Crammer","Programming for Web Applications 1").sayHi();
 
 /*
 	==================================================================
