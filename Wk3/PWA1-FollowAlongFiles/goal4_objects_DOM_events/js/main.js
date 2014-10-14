@@ -373,7 +373,7 @@ for(var i=0;i < navLinks.length;i++) { // For() to execute once for each navigat
 //console.log('------------ Manipulating CSS Classes -------------------');
 
 	var aClass = navLinks[i].firstChild.getAttribute("class"); // Fetching the class of the <li> anchors
-	navLinks[i].firstChild.setAttribute('class', 'navitem active');
+	//navLinks[i].firstChild.setAttribute('class', 'navitem active');
 
 	// Beginning Part 2
 	// Manipulating HTML
@@ -436,6 +436,7 @@ document.getElementById("contentPreview").setAttribute("style", "text-align: cen
 console.log('------------ DOM Events Ex 1-------------------');
 
 var nav = document.querySelectorAll('#nav li a');
+/*
 for(var i=0;i < nav.length;i++) {
 	nav[i].onclick = function(e) {
 		console.log(e);
@@ -443,6 +444,7 @@ for(var i=0;i < nav.length;i++) {
 		return false;
 	};
 };
+*/
 
 /*
 // this just console.log's when a click occurs
@@ -480,15 +482,17 @@ for(var i=0;i < nav.length;i++) {
 
 
 console.log('------------ DOM Events Ex 2 -------------------');
-/*
+
 // this example changes the clicked link to the active class
 
-
-
-
-*/ 
-
-
+for(var i=0;i < nav.length;i++) {
+	nav.onclick = function(e) {
+		for(var ii=0;ii < nav.length;i++) { // I'm confused and I have no idea what is happening here
+			nav[ii].setAttribute("class", "navitem");
+		};
+		this.setAttribute("class", "navitem active");
+	};
+};
 
 console.log('------------ DOM Events Ex 3 -------------------');
 /*
