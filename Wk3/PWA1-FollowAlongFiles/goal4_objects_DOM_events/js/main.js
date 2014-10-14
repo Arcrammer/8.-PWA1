@@ -374,6 +374,18 @@ for(var i=0;i < navLinks.length;i++) { // For() to execute once for each navigat
 
 	var aClass = navLinks[i].firstChild.getAttribute("class"); // Fetching the class of the <li> anchors
 	navLinks[i].firstChild.setAttribute('class', 'navitem active');
+
+	// Beginning Part 2
+	// Manipulating HTML
+	navLinks[i].firstChild.setAttribute("href","http://www.google.com/");
+
+};
+
+var navLinks = document.querySelectorAll("#nav a");
+navLinks[1].innerHTML = "Also Google";
+
+for(var i=0;i < navLinks.length;i++) {
+	navLinks[i].innerHTML = "Clicky #" + i;
 };
 
 /*
@@ -387,7 +399,10 @@ for(var i=0;i < navLinks.length;i++) { // For() to execute once for each navigat
 Sample Link: http://www.instructables.com/files/deriv/FJI/WGSW/FPIUQQ3K/FJIWGSWFPIUQQ3K.MEDIUM.jpg
 */
 
-
+var big = document.querySelector("#contentPreview img");
+big.setAttribute("src","http://4.bp.blogspot.com/-sjLiRrB0pKk/UstZq6S43DI/AAAAAAAAZEs/S8eQRRTgWds/s1600/wpid-o-BEYONCE-HM-BIKINI-facebook.jpeg")
+big.setAttribute("width", "500");
+document.getElementById("contentPreview").setAttribute("style", "text-align: center ;margin: 0px ;padding: 0px ;");
 
 /*
 	==================================================================
