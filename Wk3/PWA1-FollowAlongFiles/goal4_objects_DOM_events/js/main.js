@@ -340,7 +340,21 @@ console.log(apple.parentNode.parentNode.parentNode);
         attr = href, src, class
 */
 
+console.log("------------ Manipulating Attributes using .setAttribute() and .getAttribute() ------------");
 
+var navLinks = document.querySelectorAll("#nav li"); // Selecting all <li>'s with the id of 'nav'
+
+// Fetch the href attributes of each navigation anchor
+for(var i=0;i < navLinks.length;i++) { // For() to execute once for each navigation link
+	var href = navLinks[i].firstChild.getAttribute("href"); // Selecting the anchor element of the current <li> then returning its' 'href' attribute value to the variable 'href'
+	console.log("Manipulation href: " + href); // Logging the value to the console
+	
+	if(href === "#1") {
+		var href2 = navLinks[i].firstChild; // Fetches the <li>'s nested anchor
+		href2.setAttribute('href', 'http://www.fullsail.edu/'); // Reassining the 'href' attribute
+		href2.innerHTML = "Full Sail University"; // Why not change the text, too?
+	};
+//};
 
 /*
 	==================================================================
@@ -356,8 +370,11 @@ console.log(apple.parentNode.parentNode.parentNode);
 		- FYI: Elements can have multiple classes.
 */
 
-console.log('------------ Manipulating CSS Classes -------------------');
+//console.log('------------ Manipulating CSS Classes -------------------');
 
+	var aClass = navLinks[i].firstChild.getAttribute("class"); // Fetching the class of the <li> anchors
+	navLinks[i].firstChild.setAttribute('class', 'navitem active');
+};
 
 /*
 	==================================================================
