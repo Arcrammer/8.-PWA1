@@ -436,7 +436,13 @@ document.getElementById("contentPreview").setAttribute("style", "text-align: cen
 console.log('------------ DOM Events Ex 1-------------------');
 
 var nav = document.querySelectorAll('#nav li a');
-
+for(var i=0;i < nav.length;i++) {
+	nav[i].onclick = function(e) {
+		console.log(e);
+		e.preventDefault();
+		return false;
+	};
+};
 
 /*
 // this just console.log's when a click occurs
