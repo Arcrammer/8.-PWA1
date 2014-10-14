@@ -252,8 +252,8 @@ console.log('------------ DOCUMENT OBJECT MODEL -------------------');
 
 console.log('------------ getElementById -------------------');
 
-
-
+var playbox = document.getElementById("playbox");
+playbox.style.backgroundColor = "red";
 
 /*
 	==================================================================
@@ -265,7 +265,7 @@ console.log('------------ getElementById -------------------');
 
 console.log('------------ getElementsByTagName -------------------');
 
-
+var anchors = document.getElementsByTagName("a");
 
 
 /*
@@ -281,8 +281,7 @@ console.log('------------ getElementsByTagName -------------------');
 
 console.log('------------ querySelectorAll -------------------');
 
-
-
+var nav = document.querySelectorAll('#nav li');
 
 /*
 	==================================================================
@@ -320,8 +319,10 @@ console.log('------------ querySelectorAll -------------------');
     */
     console.log('------------ TRAVERSAL -------------------');
 
-
-
+var apple = document.querySelectorAll("#nav li a")[2];
+console.log(apple);
+console.log(apple.parentNode);
+console.log(apple.parentNode.parentNode.parentNode);
 
 /*
 	==================================================================
