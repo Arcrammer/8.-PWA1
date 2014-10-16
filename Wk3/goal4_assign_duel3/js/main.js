@@ -1,15 +1,13 @@
 /*	Duel #2
 	
 	Alexander Rhett Crammer
-	Tuesday, 7 October, 2014
+	Wednesday, 15 October, 2014
 	
 	Assignment 1
-	Part 2/3 of series	*/
+	Part 3/3 of series	*/
 
 // self-executing function
 (function(){
-
-    console.log("FIGHT!!!"); // Outputs a string to the console
 
 	// Player statistics
 	var fighter = [{ // Declaring array of objects which will contian information about the fighters
@@ -22,8 +20,8 @@
 		health: 100 // Declaring the second players health
 	}]; // Ending fighter array of objects declaration
 
-    //initiate round
-    var round = 0; // Stores the value of the round number which will be incremented (with 'round++') in the if-else which will alert the user of the current round and how many points both players currently have
+    console.log("FIGHT!!!"); // Outputs a string to the console
+
     //initiate round
     var round = 0; // Stores the value of the round number which will be incremented (with 'round++')
     var kabalHealthHUD = document.querySelector("#kabal").childNodes[1]; // Declaring a variable to hold the paragraph node under the div with id "kabal"
@@ -64,11 +62,6 @@
             }; // Ends the if-else of lines 48 and 53
         }; // Ends the fight() function executed upon button click
 
-
-    /*******  The program gets started below *******/
-    fight(); // Executes after all of the above functions and algorithms have been declared to initiate the game
-
-})(); // Ends the self-executing function() declared on line 10
     function winnerCheck(){ // Declared a function named 'winnerCheck()' which will check to see which player has won the fight after fight() has executed
         var result="no winner"; // Declared the default output of 'no winner' for the case that none of the following conditions are met and a winner couldn't be determined then stores the value in the variable 'result' for later use
         if (fighter[0].health<1 && fighter[1].health<1) // if() to be executed when the first and second players both have health less than the amount of 1
@@ -87,7 +80,6 @@
        return result; // Returns the value of this functions' 'result' variable to the 'result' variable declared within the fight() function. This variable is declared for the fight() function to locally use in its' for() loop on line 46
     }; // Ends the 'winnerCheck()' function
 
+})(); // Ends the self-executing function() declared on line 10
 
-// That was a lot of typing. I need more caffeine.
-// Commented with <3 by Alexander Rhett Crammer
-// Copyright 2014 don't use this or I'll open a law suit and make you PAAAAAAYYYYYYYYYY
+// Debugged and developed with <3 by Alexander Rhett Crammer
