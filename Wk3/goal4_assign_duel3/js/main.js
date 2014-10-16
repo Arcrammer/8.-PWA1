@@ -24,6 +24,12 @@
 
     //initiate round
     var round = 0; // Stores the value of the round number which will be incremented (with 'round++') in the if-else which will alert the user of the current round and how many points both players currently have
+    //initiate round
+    var round = 0; // Stores the value of the round number which will be incremented (with 'round++')
+    var kabalHealthHUD = document.querySelector("#kabal").childNodes[1]; // Declaring a variable to hold the paragraph node under the div with id "kabal"
+    var kratosHealthHUD = document.querySelector("#kratos").childNodes[1]; // Declaring another variable to hold the paragraph node under the div with id "kratos"
+    var roundHUD = document.querySelector("#round"); // Declaring a variable to return the h4 node which will display the current round
+    var mainButton = document.querySelector(".buttonblue"); // Declaring a variable to return the button node
 
     function fight(){ // Declaring a named function known as 'fight()' to be called at the end of this script in order to begin the fight
         alert(fighter[0].name + ":" + fighter[0].health + "	*START*	" + fighter[1].name + ":" + playerTwo[2]); // This is the first alert which the user will see after 'fight()' is called
