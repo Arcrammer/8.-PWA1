@@ -69,6 +69,24 @@
     fight(); // Executes after all of the above functions and algorithms have been declared to initiate the game
 
 })(); // Ends the self-executing function() declared on line 10
+    function winnerCheck(){ // Declared a function named 'winnerCheck()' which will check to see which player has won the fight after fight() has executed
+        var result="no winner"; // Declared the default output of 'no winner' for the case that none of the following conditions are met and a winner couldn't be determined then stores the value in the variable 'result' for later use
+        if (fighter[0].health<1 && fighter[1].health<1) // if() to be executed when the first and second players both have health less than the amount of 1
+        { // Gross coding style which is understandable and respectable but still tacky in my new-generation opinion
+            result = "You Both Die"; // Reassigns the value of the 'result' variable if both players have health amounts below 1
+        } else if(fighter[0].health<1){ // Else() to execute if the first player has health lower than the amount of 1
+            result =fighter[1].name+" WINS!!!" // Reassigns the value of the 'result' variable if the first player has health lower than 1 to declare that the second player has won the fight
+        } else if (fighter[1].health<1)// Else() to execute if the second player has health lower than the amount of 1
+        {
+            result = fighter[0].name+" WINS!!!" // Reassigns the value of the 'result' variable if the second player has health lower than 1 to declare that the first player has won the fight
+            if(fighter[0].name.toLowerCase() == "gaga") {
+            	result = fighter[0].name +" WINS!!!\n\nYYYYYAAAAAAAAAAAASSSSSSSSS GAGA SLAAAAAY MAMA" // Reassigns the 'result' value if the first player is named 'Gaga' by comparing the value to "gaga" after being converted to lower case, that way the first players' name could be any case of the word 'Gaga' and the condition for this if() would still be true and reassign the value
+            	} // Ends the if()
+        }; // Ends the if-elseif-elseif's
+
+       return result; // Returns the value of this functions' 'result' variable to the 'result' variable declared within the fight() function. This variable is declared for the fight() function to locally use in its' for() loop on line 46
+    }; // Ends the 'winnerCheck()' function
+
 
 // That was a lot of typing. I need more caffeine.
 // Commented with <3 by Alexander Rhett Crammer
