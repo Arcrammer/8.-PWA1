@@ -30,7 +30,19 @@ console.log('------Objects ----------');
 
 //{KEY : Value} pairings,
 
+// Traditional JavaScript objects are declared using no quotations or apostrophe's to surround the key value, and they can hold any data type, including functions
+var traditionalPersonObject = {
+	name: "Alexander Rhett Crammer",
+	age: 18,
+	secretAgent: false
+};
 
+// JSON objects are declared by surrounding the key values with double quotes, and they can hold only the six data types: array, integer, string, object, null, boolean
+var JSONPersonObject = {
+	"name": "Alexander Rhett Crammer",
+	"age": 18,
+	"secretAgent": false
+};
 
 /* accessing object properties
      - below are 3 ways you can access the property information in an object
@@ -41,20 +53,58 @@ console.log('------Objects ----------');
      - also keep in mind that since the keys can be strings, you could access the keys using string variables
  */
 
+console.log(traditionalPersonObject.age + " -- Traditional JavaScript using dot notation");
+console.log(JSONPersonObject.age + " -- JSON using dot notation");
+console.log("\n");
+var ageKeyStringValue = "age";
+console.log(traditionalPersonObject[ageKeyStringValue] + " -- Traditional JavaScript using a variable and index notation");
+console.log(JSONPersonObject[ageKeyStringValue] + " -- JSON using a variable and index notation");
+console.log("\n");
+console.log(traditionalPersonObject["age"] + " -- Traditional JavaScript using a string and index notation");
+console.log(JSONPersonObject["age"] + " -- JSON using a string and index notation");
+console.log("\n");
 
 // setter
 
+traditionalPersonObject.name = "Armani"; // Reassigning the value of the 'name' property
+JSONPersonObject.name = "Armani"; // Reassigning the value of the 'name' property
+traditionalPersonObject.favouriteCity = "New York"; // Creating a new property
+JSONPersonObject.favouriteCity = "New York"; // Creating a new property
 
+console.log(traditionalPersonObject);
+console.log(JSONPersonObject);
+console.log("\n");
 
 //nested objects
 
+traditionalPersonObject = {
+	dob: {
+		month: "December",
+		day: 27,
+		year: 1995
+	}
+};
+JSONPersonObject = {
+	"dob": {
+		"month": "December",
+		"day": 27,
+		"year": 1995
+	}
+};
 
+console.log(traditionalPersonObject.dob);
+console.log(JSONPersonObject.dob);
+console.log("\n");
+console.log(traditionalPersonObject.dob["month"]);
+console.log(JSONPersonObject.dob["month"]);
+console.log("\n");
+console.log(traditionalPersonObject.dob.month);
+console.log(JSONPersonObject.dob.month);
+console.log("\n");
 
 //---------------------------------------------
 
 // Object within an object
-
-console.log('------Object within an object, Arrays, Function ----------');
 
 
 
