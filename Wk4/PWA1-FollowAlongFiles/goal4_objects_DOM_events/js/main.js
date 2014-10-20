@@ -106,7 +106,28 @@ console.log("\n");
 
 // Object within an object
 
+console.log('------Object within an object, Arrays, Function ----------');
 
+// Creating a traditional JavaScript object to reserve the ability to create functions
+var thatGuy = {
+	name: "Alexander Rhett Crammer",
+	course: "Programming for Web Fundamentals 1",
+	address: {
+		street: "3300 University Boulevard",
+		city: "Winter Park",
+		state: "Florida",
+		intersection: ["University","Semoran"]
+	},
+	displayMyAddress: function() {
+		var addressAsString = this.address.street + "\n" + this.address.city + ", " + this.address.state + "\nAt the intersection of \"" + this.address.intersection[0] + "\" and \"" + this.address.intersection[1] + "\".";
+		return addressAsString;
+	}
+};
+
+console.log(thatGuy.displayMyAddress());
+console.log("\n");
+console.log(thatGuy.address.street + ", " + thatGuy.address.city + ".");
+console.log("\n");
 
 //properties & methods
 /*
@@ -120,8 +141,19 @@ console.log('------Objects - properties & methods ----------');
 
 //Method 1 "Basic"
 
+var fsStudent = {};
+fsStudent.age = 18;
+fsStudent.career = "Web Developer";
+fsStudent.sayHello = function() {
+	console.log("Hello!");
+}
 
-
+fsStudent.sayHello();
+fsStudent["sayHello"]();
+console.log("\n");
+console.log(fsStudent.age);
+console.log(fsStudent["age"]);
+console.log("\n");
 
 // above, we first initialize the object, then we created 2 properties 
 //   for the object, and a method called sayHello - notice that the method is 
@@ -129,9 +161,6 @@ console.log('------Objects - properties & methods ----------');
 
 // we can also access the methods and properties of an object using  [ ] , 
 // 	by using their name as a string - all of the below are valid:
-
-
-
 
 /* --------------
 Method 2 "OBJECT Literal"
@@ -142,8 +171,13 @@ Method 2 "OBJECT Literal"
 	- below is the same object as in Method 1
 */
 
-
-
+var fsStudent = {
+	age: 18,
+	career: "Web Development",
+	sayHello: function() {
+		console.log("Hello, world!");
+	}
+};
 
 //---------------------------------------------
 
