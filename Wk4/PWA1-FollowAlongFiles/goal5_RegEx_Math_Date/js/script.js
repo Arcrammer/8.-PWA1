@@ -1,6 +1,10 @@
 /*
     PWA1: Goal 5: Course Material
     Regular Expression / Math Methods / Date Methods
+    
+    Alexander Rhett Crammer
+    Monday, 20 October, 2014
+    
 */
 
 
