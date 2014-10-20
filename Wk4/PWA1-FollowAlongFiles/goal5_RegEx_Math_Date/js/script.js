@@ -435,7 +435,20 @@ STUDENT ACTIVITY
 
     console.log('------------ Date Methods -------------------');
 
+console.log(new Date());
 
+var d = new Date(); // Creating a new instance of the Date object and assigning it to the variable named 'd'
+console.log("Current day of the month: " + d.getDate());
+console.log("Current day of the week: " + d.getDay());
+console.log("Current year: " + d.getFullYear());
+console.log("Current hour of the day: " + d.getHours());
+console.log("Milliseconds from the current second: " + d.getMilliseconds());
+console.log("Milliseconds from 00:00 January 1, 1970: " + d.getTime());
+console.log(d.setFullYear(2021,0,01)); // Sets a date for the instance of a Date() object under the variable 'd' then returns the amount of milliseconds from 00 January 1, 1970 as an integer to the console log
+document.getElementById("tagbox").innerHTML = d;
 
+var d = new Date(); // Resetting the value of the properties in the 'd' object (or instance of the 'Date()' object. Objects are technically instances of classes, but whatever)
+console.log(d.toLocaleDateString());
+console.log("\n");
 
 })(); // end wrapper
