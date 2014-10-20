@@ -405,7 +405,15 @@ STUDENT ACTIVITY
 
     console.log('------------ Math Methods -------------------');
 
-
+//console.log(document.getElementById("tagbox").innerHTML = Math.random());
+var rand = (Math.random() * 11);
+console.log(document.getElementById("tagbox").innerHTML = rand);
+var num = Math.floor(rand); // Math.floor() will round to the bottom of the integer passed to it, so '4.9' returns as '4'
+console.log(num);
+console.log(document.getElementById("tagbox").innerHTML = Math.max(5,10));
+console.log(document.getElementById("tagbox").innerHTML = Math.min(5,10));
+console.log(document.getElementById("tagbox").innerHTML = Math.round(2.5)); // Rounds the number passed as it would be rounded in math
+console.log("\n");
 
     /******************************************************************************
      STUDENT ACTIVITY
@@ -438,7 +446,9 @@ STUDENT ACTIVITY
 */
 
     console.log('------------ Date Methods -------------------');
-
+/* This was from the previous assignment where we were working with the Date() object
+	It has to be commented away because it will overwrite all of the progress of our
+	work with the Math() object which we're doing above.
 console.log(new Date());
 
 var d = new Date(); // Creating a new instance of the Date object and assigning it to the variable named 'd'
@@ -454,5 +464,5 @@ document.getElementById("tagbox").innerHTML = d;
 var d = new Date(); // Resetting the value of the properties in the 'd' object (or instance of the 'Date()' object. Objects are technically instances of classes, but whatever)
 console.log(d.toLocaleDateString());
 console.log("\n");
-
+*/
 })(); // end wrapper
