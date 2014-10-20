@@ -208,7 +208,31 @@ console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
 
 // this is integrating multiple data types - object with an array of objects
 
+var universityInformation = {
+	schoolName: "Full Sail University",
+	address: "3300 University Boulevard",
+	studentCount: 16000,
+	students: [{
+		name: "Alexander Rhett Crammer",
+		GPA: 3.7,
+		classes: ["Programming for Web Applications 1","Programming for Web Applications 2"]
+	},{
+		name: "Someone Else",
+		GPA: 3.9,
+		classes: ["Programming for Web Applications 1","Programming for Web Applications 2"]
+	}]
+};
 
+console.log(universityInformation.schoolName);
+console.log(universityInformation["schoolName"]);
+var newCnt = universityInformation.studentCount;
+console.log(newCnt);
+var studentCountString = "studentCount";
+console.log(universityInformation[studentCountString]);
+console.log(universityInformation["address"]);
+console.log(universityInformation.students[0].GPA);
+console.log(universityInformation["students"][0]["GPA"]);
+console.log("\n");
 
 /* ----------------------------------------------------------------------------
  STUDENT ACTIVITY 2:
@@ -222,8 +246,16 @@ console.log('------ STUDENT ACTIVITY - ANSWERS BELOW ----------');
     2.  console.log the average grade by calling the gradeAvg method.
 ----------------------------------------------------------------------------- */
 
+var gradeAvg = function(universityInformationObject) {
+	var count = total = 0;
+	for(var i=0; i < universityInformationObject.students.length;i++) {
+		count++;
+		total = total + universityInformationObject.students[i].GPA;
+	}	
+	return total / count; // Returns the average
+};
 
-
+console.log("Average GPA: " + gradeAvg(universityInformation));
 
 /* ===============================================================
 	The for-in object loop
