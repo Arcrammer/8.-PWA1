@@ -267,7 +267,16 @@ console.log("Average GPA: " + gradeAvg(universityInformation));
 */
     console.log("---------- Object - For In Loop ----------------");
 
+var student = {
+	name: "James Bond",
+	gender: "Male",
+	job: "Web Developer"
+};
 
+for(var key in student) {
+	console.log("Key: " + key);
+	console.log("Value: " + student[key]);
+};
 
 /*
 	===============================================
@@ -302,7 +311,15 @@ console.log("Average GPA: " + gradeAvg(universityInformation));
 */
     console.log('------ Objects - Converting Datatypes ----------');
 
+var myNum = 1;
+var myString = String(myNum);
+var myBoolean = Boolean(myString);
 
+console.log("'myNum' was converted to an integer");
+console.log("'myString' is the type of: " + typeof myString + "\nWith a value of: " + myString);
+console.log("'myString' was converted to an integer");
+console.log("'myBoolean' is the type of: " + typeof myBoolean + "\nWith a value of: " + myBoolean);
+console.log("\n");
 
 /*
 	- because these values act as objects, the data types also have methods and 
@@ -312,19 +329,31 @@ console.log("Average GPA: " + gradeAvg(universityInformation));
 */
 
 // #1 - shows string length
-
+var someVariable = "omg lololol";
+console.log(someVariable.length); // Logs the 'length' property of the string object to the console
 
 // #2 - shows array length
-	
+var myArray = [1,2,3,4,5,6];
+console.log(myArray.length); // Logs the 'length' property of the array object to the console
 
 // #3 - shows and array of objects, inside of an object length
-	
+console.log(universityInformation.students.length); // Logs an integer to represent the amount of objects within the 'students' property (containing an array of two objects) to the console
 
 console.log('------ MORE Object examples - Objects/Functions ----------');
 
 // showing a function call and creating a method
 
+// Creating an object to return a class containing a method
+var fn = function(name,course) {
+	return {
+		sayHi: function() {
+			console.log("My name is " + name + ", and I am currently attending the course \'" + course + "\'.");
+		}
+	}
+};
 
+fn("James Bond","Programming for Web Applications 1").sayHi();
+console.log("\n");
 
 /*
 	==================================================================
