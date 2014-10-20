@@ -413,7 +413,6 @@ console.log(num);
 console.log(document.getElementById("tagbox").innerHTML = Math.max(5,10));
 console.log(document.getElementById("tagbox").innerHTML = Math.min(5,10));
 console.log(document.getElementById("tagbox").innerHTML = Math.round(2.5)); // Rounds the number passed as it would be rounded in math
-console.log("\n");
 
     /******************************************************************************
      STUDENT ACTIVITY
@@ -431,8 +430,15 @@ console.log("\n");
 
     ****************************************************************************/
 
+console.log("\nStudent Activity...");
+console.log(Math.max(100, 1000, 50, 2, 55, 75));
+console.log(Math.min(100, 1000, 50, 2, 55, 75));
+console.log((Math.random() * 10000 + 100));
+var randomNumberBetween10and100 = Math.random() * 100 + 10; // Holding the random number in a variable for consistency
+console.log(randomNumberBetween10and100); // 3a
+console.log(Math.round(randomNumberBetween10and100)); // 3b
 
-
+console.log("\n");
 
 /*	==================================================================
 	Date Methods
