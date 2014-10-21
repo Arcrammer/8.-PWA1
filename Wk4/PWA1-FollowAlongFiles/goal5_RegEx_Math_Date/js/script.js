@@ -275,7 +275,7 @@ console.log('------------ DOM Events -------------------');
 	Date: 	/^(?:(?:(?:0?[13578]|1[02])(\/|-|\.)31)\1|(?:(?:0?[13-9]|1[0-2])(\/|-|\.)(?:29|30)\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:0?2(\/|-|\.)29\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
 	Email: 	/(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,3})/
 	Phone: ^[2-9]\d{2}-\d{3}-\d{4}$
-		407-555-5555 
+		407-555-5555
 
 	// special RegEx rules
 	. (dot)			this is a wildcard character - it will match anything except for line breaks
@@ -315,25 +315,25 @@ STUDENT ACTIVITY
 
 	1.  Write a RegEx for a basic name (containing only letters)
 
-		Answer: 
+		Answer: /^[a-zA-Z]$/
 
 	2.  What are the possible answers for this: /[Jj]ava[Ss]cript/
 
-		Answer: 
+		Answer: Only 'JavaScript', 'Javascript', 'javaScript', and 'javascript' will return as matches
 
 	3. 	What are the possible answers for this: /^(Java)?Script$/
 
-		Answer: 
+		Answer: The string must begin with the four characters, 'Java' either only once or not at all, and end with the characters 'Script' any amount of times
 
 	4. 	Describe the possible answer for this: /^[a-zA-Z\^\-\.]+$/
 
-		Answer: 
+		Answer: The string must begin with any letter, either uppercase or lowercase, and it should contain a caret, then hyphen, then period. I'm a little confused right now to be honest. According to MDN's JavaScript reference, this would mean the string would have to begin with any letter, uppercase or lowecase, a caret, a hyphen, a backslash, or a period. MDN also says special characters are no longer special when they're used in character sets (the square brackets), so I don't understand why the backslashes are in the character set three times. It also means the provided would have to match itself once or more, and that this should all match the end of the input, also. I'm VERY confused!
 
 	5.	Combining character sets can create sequences of matches.
 		
 		Describe the possible answers for this: /^[a-zA-Z]+[0-9]$/ 	
 
-		Answer: 
+		Answer: The string must begin with letters either uppercase or lowercase, which must match themselves either once or more times and end with one number between 0 and 9.
 
 ----------------------------------------------------------------------------- */
 
@@ -350,10 +350,15 @@ STUDENT ACTIVITY
 	split()		string.split.(RegExp): cuts a string into an array, making cuts at matches
 */
 
-
-
-
-
+// I'll just do a simple one!
+var regularExpression1 = /[\w-\s]+/; // Matches if there's alphanumeric text with or without spaces between the beginning and ending of the string. Not to mention that I DID have to use backslashes within my squared brackets, as opposed to what MDN said.
+var myString = "Alexander Rhett Crammer";
+console.log(regularExpression1.exec(myString)); // Looking for a match then returning an array of information which has matched
+console.log(regularExpression1.test(myString)); // Looking for a match then returning either true or false as a boolean value
+console.log(myString.search(regularExpression1)); // Looking for a match then returning either the index of the first character where the match was found or '-1' IMPORTANT: The .search() method is called on string objects, not RegExp objects. The RegExp object is passed to .search()
+var mySecondString = "Armani S. Valtier";
+console.log(myString.replace(regularExpression1,mySecondString));
+console.log(myString.match("Alex"));
 
 /* 
 	// RegExp metaCharacters
@@ -452,9 +457,7 @@ console.log("\n");
 */
 
     console.log('------------ Date Methods -------------------');
-/* This was from the previous assignment where we were working with the Date() object
-	It has to be commented away because it will overwrite all of the progress of our
-	work with the Math() object which we're doing above.
+
 console.log(new Date());
 
 var d = new Date(); // Creating a new instance of the Date object and assigning it to the variable named 'd'
@@ -470,5 +473,5 @@ document.getElementById("tagbox").innerHTML = d;
 var d = new Date(); // Resetting the value of the properties in the 'd' object (or instance of the 'Date()' object. Objects are technically instances of classes, but whatever)
 console.log(d.toLocaleDateString());
 console.log("\n");
-*/
+
 })(); // end wrapper
